@@ -8,11 +8,13 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using DykplatserWinPhone.Resources;
+using Microsoft.Phone.Tasks;
 
 namespace DykplatserWinPhone
 {
     public partial class DetailsPage : PhoneApplicationPage
     {
+        int theIndex;
         // Constructor
         public DetailsPage()
         {
@@ -31,10 +33,31 @@ namespace DykplatserWinPhone
                 if (NavigationContext.QueryString.TryGetValue("selectedItem", out selectedIndex))
                 {
                     int index = int.Parse(selectedIndex);
+                    theIndex = index;
                     DataContext = App.ViewModel.Items[index];
                 }
             }
         }
+
+        private void GotoMap_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/MapPage.xaml?selectedItem=" + theIndex, UriKind.Relative));
+
+        }
+
+      
+        // 
+        //private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    WebBrowserTask webBrowserTask = new WebBrowserTask();
+
+        //    HyperlinkButton theButton = sender as HyperlinkButton;
+        //    webBrowserTask.Uri = theButton.NavigateUri;
+
+        //    //webBrowserTask.Uri = new Uri(theButton.NavigateUri, UriKind.Absolute);
+
+        //    webBrowserTask.Show();
+        //}
 
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()

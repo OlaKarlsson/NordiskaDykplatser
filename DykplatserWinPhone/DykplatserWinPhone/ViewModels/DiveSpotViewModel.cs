@@ -7,10 +7,11 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Device.Location;
 
 namespace DykplatserWinPhone.ViewModels
 {
-    public class ItemViewModel : INotifyPropertyChanged
+    public class DiveSpotViewModel : INotifyPropertyChanged
     {
         private string _id;
         /// <summary>
@@ -33,26 +34,79 @@ namespace DykplatserWinPhone.ViewModels
             }
         }
 
-        private string _lineOne;
+        private string _name;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public string LineOne
+        public string Name
         {
             get
             {
-                return _lineOne;
+                return _name;
             }
             set
             {
-                if (value != _lineOne)
+                if (value != _name)
                 {
-                    _lineOne = value;
-                    NotifyPropertyChanged("LineOne");
+                    _name = value;
+                    NotifyPropertyChanged("Name");
                 }
             }
         }
+
+      
+        public GeoCoordinate GeoCoordinate
+        {
+            get
+            {
+                return new GeoCoordinate(_latitude, _longitude);
+            }
+           
+        }
+
+        private double _latitude;
+        /// <summary>
+        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
+        /// </summary>
+        /// <returns></returns>
+        public double Latitude
+        {
+            get
+            {
+                return _latitude;
+            }
+            set
+            {
+                if (value != _latitude)
+                {
+                    _latitude = value;
+                    NotifyPropertyChanged("Latitude");
+                }
+            }
+        }
+
+        private double _longitude;
+        /// <summary>
+        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
+        /// </summary>
+        /// <returns></returns>
+        public double Longitude
+        {
+            get
+            {
+                return _longitude;
+            }
+            set
+            {
+                if (value != _longitude)
+                {
+                    _longitude = value;
+                    NotifyPropertyChanged("Longitude");
+                }
+            }
+        }
+       
 
         private string _lineTwo;
         /// <summary>
