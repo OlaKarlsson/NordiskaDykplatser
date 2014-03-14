@@ -13,6 +13,7 @@ using SharpKml.Dom;
 using SharpKml.Base;
 using System.Collections.Generic;
 using DykplatserWinPhone.Helpers;
+using System.Globalization;
 
 namespace DykplatserWinPhone.ViewModels
 {
@@ -98,12 +99,12 @@ namespace DykplatserWinPhone.ViewModels
                 theDiveSpot.InfoUrl = Helper.ExtractURLsFromString(diveSpot.Element(ns + "description").Value)[0];
                 theDiveSpot.MobileInfoUrl = string.Format("{0}/mobil/{1}", baseUrl, theDiveSpot.InfoUrl.Substring(22)); 
                 //theDiveSpot.DiveLocation = new Location();
-                theDiveSpot.Longitude = Double.Parse(diveSpot.Element(ns + "LookAt").Element(ns + "longitude").Value);
-                theDiveSpot.Latitude = Double.Parse(diveSpot.Element(ns + "LookAt").Element(ns + "latitude").Value);
+                theDiveSpot.Longitude = Double.Parse(diveSpot.Element(ns + "LookAt").Element(ns + "longitude").Value, CultureInfo.InvariantCulture);
+                theDiveSpot.Latitude = Double.Parse(diveSpot.Element(ns + "LookAt").Element(ns + "latitude").Value, CultureInfo.InvariantCulture);
 
                 divespots.Add(theDiveSpot);
 
-                this.Items.Add(new DiveSpotViewModel() { ID = i.ToString(), Name = theDiveSpot.Name, LineTwo = string.Format("Long: {0} & Lat: {1}", theDiveSpot.Longitude, theDiveSpot.Latitude), Latitude = theDiveSpot.Latitude, Longitude = theDiveSpot.Longitude, LineThree = theDiveSpot.MobileInfoUrl });
+                this.Items.Add(new DiveSpotViewModel() { ID = i.ToString(), Name = theDiveSpot.Name, LineTwo = string.Format("Long: {0} & Lat: {1}", theDiveSpot.Longitude, theDiveSpot.Latitude), Latitude = theDiveSpot.Latitude, Longitude = theDiveSpot.Longitude, LineThree = theDiveSpot.MobileInfoUrl, MobileInfoUrl = theDiveSpot.MobileInfoUrl });
                 i++;
 
             }

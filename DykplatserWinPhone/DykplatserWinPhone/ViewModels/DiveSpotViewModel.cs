@@ -150,6 +150,24 @@ namespace DykplatserWinPhone.ViewModels
             }
         }
 
+
+        private string _mobileInfoUrl;
+        public string MobileInfoUrl
+        {
+            get
+            {
+                return _mobileInfoUrl;
+            }
+            set
+            {
+                if (value != _mobileInfoUrl)
+                {
+                    _mobileInfoUrl = value;
+                    NotifyPropertyChanged("MobileInfoUrl");
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName)
         {

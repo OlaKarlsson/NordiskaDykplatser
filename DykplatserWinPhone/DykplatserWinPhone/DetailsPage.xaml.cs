@@ -9,12 +9,15 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using DykplatserWinPhone.Resources;
 using Microsoft.Phone.Tasks;
+using DykplatserWinPhone.ViewModels;
+using System.Device.Location;
 
 namespace DykplatserWinPhone
 {
     public partial class DetailsPage : PhoneApplicationPage
     {
         int theIndex;
+        DiveSpotViewModel diveSpot;
         // Constructor
         public DetailsPage()
         {
@@ -35,6 +38,10 @@ namespace DykplatserWinPhone
                     int index = int.Parse(selectedIndex);
                     theIndex = index;
                     DataContext = App.ViewModel.Items[index];
+                    diveSpot = App.ViewModel.Items[index] as DiveSpotViewModel;
+
+                    TheMap.Center = new GeoCoordinate(diveSpot.Latitude, diveSpot.Longitude);
+                    TheMap.ZoomLevel = 10;
                 }
             }
         }
@@ -44,6 +51,15 @@ namespace DykplatserWinPhone
             NavigationService.Navigate(new Uri("/MapPage.xaml?selectedItem=" + theIndex, UriKind.Relative));
 
         }
+
+        private void GotoInfo_Click(object sender, RoutedEventArgs e)
+        {
+            WebBrowserTask wbt = new WebBrowserTask();
+            wbt.Uri = new Uri(diveSpot.MobileInfoUrl, UriKind.Absolute);
+            wbt.Show();
+        }
+
+       
 
       
         // 

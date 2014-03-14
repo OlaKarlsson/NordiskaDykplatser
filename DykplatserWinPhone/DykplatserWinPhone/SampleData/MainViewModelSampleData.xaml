@@ -5,12 +5,12 @@
     SampleProperty="Sample Text Property Value">
 
     <vm:MainViewModel.Items>
-        <vm:DiveSpotViewModel ID="0" LineOne="design one" Latitude="Maecenas praesent accumsan bibendum" LineThree="Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"/>
-        <vm:DiveSpotViewModel ID="1" LineOne="design two" Latitude="Dictumst eleifend facilisi faucibus" LineThree="Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"/>
-        <vm:DiveSpotViewModel ID="2" LineOne="design three" Latitude="Habitant inceptos interdum lobortis" LineThree="Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"/>
-        <vm:DiveSpotViewModel ID="3" LineOne="design four" Latitude="Nascetur pharetra placerat pulvinar" LineThree="Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"/>
-        <vm:DiveSpotViewModel ID="4" LineOne="design five" Latitude="Sagittis senectus sociosqu suscipit" LineThree="Dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis"/>
-        <vm:DiveSpotViewModel ID="5" LineOne="design six" Latitude="Torquent ultrices vehicula volutpat" LineThree="Senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend"/>
+        <vm:DiveSpotViewModel ID="0" Name="design one" Latitude="33" LineThree="Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"/>
+        <vm:DiveSpotViewModel ID="1" Name="design two" Latitude="33" LineThree="Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"/>
+        <vm:DiveSpotViewModel ID="2" Name="design three" Latitude="33" LineThree="Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"/>
+        <vm:DiveSpotViewModel ID="3" Name="design four" Latitude="33" LineThree="Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"/>
+        <vm:DiveSpotViewModel ID="4" Name="design five" Latitude="33" LineThree="Dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis"/>
+        <vm:DiveSpotViewModel ID="5" Name="design six" Latitude="33" LineThree="Senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend"/>
     </vm:MainViewModel.Items>
 
 </vm:MainViewModel>
